@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindevExpert - Solutions ALMOHAMI, SAASCOM & YoussiManager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .badge-ai {
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i data-lucide="code-2" class="text-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-blue-900">Windev<span class="text-blue-600">Expert</span></span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#logiciels" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Nos Logiciels</a>
+                    <a href="#formations" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Formations</a>
+                    <a href="#offres" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Abonnements</a>
+                    <div class="h-6 w-px bg-slate-200"></div>
+                    <a href="/login" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Connexion</a>
+                    <a href="/register" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+                        Espace Client
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <button class="p-2 text-slate-600"><i data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-100">
+                    <span class="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
+                    <span>Solutions Métiers & Vidéos à la demande</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1]">
+                    L'Expertise <span class="text-blue-600">Windev</span> au service de votre performance.
+                </h1>
+                <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Découvrez nos solutions phares <strong>ALMOHAMI</strong>, <strong>SAASCOM</strong> et <strong>YoussiManager</strong>, et accédez à nos programmes de formation vidéo exclusifs.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#offres" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl hover:shadow-blue-200 flex items-center justify-center gap-2">
+                        S'abonner aux cours
+                    </a>
+                    <a href="#logiciels" class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                        Nos Logiciels
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 relative">
+                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border border-slate-100 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="Dashboard WindevExpert" class="rounded-2xl shadow-inner w-full">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <div class="bg-white/90 backdrop-blur p-6 rounded-2xl shadow-2xl border border-blue-100 flex items-center gap-4">
+                            <div class="bg-indigo-600 p-3 rounded-xl"><i data-lucide="play" class="text-white fill-current"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-indigo-600 uppercase tracking-widest">WindevExpert TV</p>
+                                <p class="text-sm font-medium text-slate-700">Accès illimité aux vidéos...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Logiciels Phares -->
+    <section id="logiciels" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-blue-600 font-bold tracking-widest uppercase text-sm">Notre Catalogue Premium</h2>
+                <p class="text-4xl font-black text-slate-900">Des solutions adaptées à votre métier</p>
+                <p class="text-slate-500 max-w-2xl mx-auto">Logiciels desktop haute performance avec réplication cloud et gestion multi-postes.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- ALMOHAMI -->
+                <div class="bg-slate-50 border border-slate-200 rounded-[2.5rem] p-8 card-hover relative flex flex-col group">
+                    <div class="absolute -top-4 left-8 badge-ai px-4 py-1.5 rounded-full text-xs font-black shadow-lg uppercase">Assistant IA Intégré</div>
+                    <div class="bg-indigo-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-indigo-200">
+                        <i data-lucide="gavel" class="text-white w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-3xl font-black mb-2">ALMOHAMI</h3>
+                    <p class="text-blue-600 font-bold text-sm mb-4 uppercase tracking-tighter">Cabinet d'Avocats</p>
+                    <p class="text-slate-600 mb-6 flex-grow leading-relaxed">Logiciel Desktop ultra-complet avec assistance IA juridique. Gérez vos dossiers et audiences en toute souveraineté.</p>
+                    <ul class="space-y-3 mb-8 text-sm text-slate-500 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="cpu" class="text-indigo-500 w-4 h-4"></i> IA Juridique & Analyse</li>
+                        <li class="flex items-center gap-2"><i data-lucide="globe" class="text-indigo-500 w-4 h-4"></i> Accès clients via portail Web</li>
+                        <li class="flex items-center gap-2"><i data-lucide="cloud-lightning" class="text-indigo-500 w-4 h-4"></i> Réplication Cloud</li>
+                        <li class="flex items-center gap-2"><i data-lucide="shield-check" class="text-indigo-500 w-4 h-4"></i> Hébergement souverain</li>
+                    </ul>
+                    <a href="#" class="w-full text-center py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg">Demander une démo</a>
+                </div>
+
+                <!-- SAASCOM -->
+                <div class="bg-slate-50 border border-slate-200 rounded-[2.5rem] p-8 card-hover relative flex flex-col group">
+                    <div class="bg-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-blue-200">
+                        <i data-lucide="shopping-cart" class="text-white w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-3xl font-black mb-2">SAASCOM</h3>
+                    <p class="text-blue-600 font-bold text-sm mb-4 uppercase tracking-tighter">Gestion Commerciale</p>
+                    <p class="text-slate-600 mb-6 flex-grow leading-relaxed">Solution multi-sites pour piloter votre activité commerciale sur tous les supports (Web, Desktop, Mobile).</p>
+                    <ul class="space-y-3 mb-8 text-sm text-slate-500 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="layout-grid" class="text-blue-500 w-4 h-4"></i> Architecture Multi-sites</li>
+                        <li class="flex items-center gap-2"><i data-lucide="monitor" class="text-blue-500 w-4 h-4"></i> Logiciel Desktop (Windev)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="smartphone" class="text-blue-500 w-4 h-4"></i> App Mobile (Android/iOS)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="file-text" class="text-blue-500 w-4 h-4"></i> Facturation temps réel</li>
+                    </ul>
+                    <a href="#" class="w-full text-center py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Voir les tarifs</a>
+                </div>
+
+                <!-- YoussiManager -->
+                <div class="bg-slate-50 border border-slate-200 rounded-[2.5rem] p-8 card-hover relative flex flex-col group">
+                    <div class="bg-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-rose-200">
+                        <i data-lucide="sparkles" class="text-white w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-3xl font-black mb-2 text-slate-800">YoussiManager</h3>
+                    <p class="text-rose-600 font-bold text-sm mb-4 uppercase tracking-tighter">Beauté & Instituts</p>
+                    <p class="text-slate-600 mb-6 flex-grow leading-relaxed">Simplifiez la gestion de votre institut : planning intelligent, fidélité clients et suivi des ventes optimisé.</p>
+                    <ul class="space-y-3 mb-8 text-sm text-slate-500 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="calendar-days" class="text-rose-500 w-4 h-4"></i> Planning interactif & RDV</li>
+                        <li class="flex items-center gap-2"><i data-lucide="heart" class="text-rose-500 w-4 h-4"></i> Fidélité & CRM Client</li>
+                        <li class="flex items-center gap-2"><i data-lucide="bar-chart-3" class="text-rose-500 w-4 h-4"></i> Analyse des revenus</li>
+                        <li class="flex items-center gap-2"><i data-lucide="tablet" class="text-rose-500 w-4 h-4"></i> Interface tactile intuitive</li>
+                    </ul>
+                    <a href="#" class="w-full text-center py-4 border-2 border-slate-800 text-slate-800 rounded-2xl font-bold hover:bg-slate-800 hover:text-white transition-all">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Expertise Technique -->
+    <section id="services" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="inline-block px-4 py-1 bg-blue-500/20 rounded-full border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest">Pourquoi WindevExpert ?</div>
+                    <h2 class="text-4xl lg:text-5xl font-black leading-tight">La technologie au service de <span class="text-blue-500">votre métier</span></h2>
+                    <p class="text-slate-400 text-lg leading-relaxed">Nous développons des écosystèmes complets où le Desktop, le Web et le Mobile communiquent parfaitement pour une efficacité maximale.</p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                            <i data-lucide="repeat" class="text-blue-400 mb-4"></i>
+                            <h4 class="font-bold mb-2">Réplication Cloud</h4>
+                            <p class="text-sm text-slate-500">Synchronisation HFSQL ultra-rapide entre vos sites distants.</p>
+                        </div>
+                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                            <i data-lucide="lock" class="text-blue-400 mb-4"></i>
+                            <h4 class="font-bold mb-2">Souveraineté</h4>
+                            <p class="text-sm text-slate-500">Vos données sont hébergées selon les normes de sécurité les plus strictes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-blue-500/20 blur-[100px] rounded-full"></div>
+                    <div class="bg-slate-800 p-8 rounded-[3rem] border border-white/10 shadow-2xl relative">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><i data-lucide="terminal" class="text-green-400"></i> Code Qualité</h3>
+                        <div class="space-y-4 font-mono text-sm">
+                            <div class="flex gap-4 p-3 bg-slate-900/50 rounded-lg"><span class="text-slate-600">01</span><span class="text-blue-400">SI</span> <span class="text-white">gUtiliseIA</span> <span class="text-blue-400">ALORS</span></div>
+                            <div class="flex gap-4 p-3 bg-slate-900/50 rounded-lg"><span class="text-slate-600">02</span> &nbsp;&nbsp;<span class="text-green-400">AI_AnalyseJuridique</span>(<span class="text-orange-400">DossierID</span>)</div>
+                            <div class="flex gap-4 p-3 bg-slate-900/50 rounded-lg"><span class="text-slate-600">03</span><span class="text-blue-400">FIN</span></div>
+                            <div class="flex gap-4 p-3 bg-slate-900/50 rounded-lg"><span class="text-slate-600">04</span><span class="text-blue-400">RETOUR</span> <span class="text-white">Réplication_Instant_Cloud</span>()</div>
+                        </div>
+                        <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-end">
+                            <div class="flex -space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-600 border-2 border-slate-800"></div>
+                                <div class="w-10 h-10 rounded-full bg-indigo-600 border-2 border-slate-800"></div>
+                                <div class="w-10 h-10 rounded-full bg-rose-500 border-2 border-slate-800"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Formations (LMS par Abonnement) -->
+    <section id="formations" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm">Formation en ligne</h2>
+                <p class="text-4xl lg:text-5xl font-black text-slate-900">Apprenez à votre rythme en vidéo</p>
+                <p class="text-slate-500 max-w-2xl mx-auto">Accédez à l'intégralité de nos programmes via nos formules d'abonnement flexibles.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <!-- Formation ALMOHAMI -->
+                <div class="group flex flex-col md:flex-row bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100 hover:shadow-2xl transition-all">
+                    <div class="md:w-1/3 relative">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600" alt="Cours ALMOHAMI" class="h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3 space-y-4">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-[10px] font-black uppercase border border-indigo-200">Cours Vidéo</span>
+                        <h4 class="text-2xl font-black leading-tight">Digitalisation de Cabinet avec ALMOHAMI</h4>
+                        <p class="text-slate-500 text-sm">Maîtrisez l'IA juridique et l'organisation numérique de vos dossiers en 10 heures de contenu vidéo.</p>
+                        <div class="flex items-center gap-4 text-xs font-bold text-slate-400">
+                            <span class="flex items-center gap-1"><i data-lucide="play-circle" class="w-4 h-4 text-blue-600"></i> 10h de contenu</span>
+                            <span class="flex items-center gap-1"><i data-lucide="list" class="w-4 h-4 text-blue-600"></i> 24 chapitres</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation Windev -->
+                <div class="group flex flex-col md:flex-row bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100 hover:shadow-2xl transition-all">
+                    <div class="md:w-1/3 relative">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" alt="Cours ERP" class="h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3 space-y-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-[10px] font-black uppercase border border-blue-200">Cours Vidéo</span>
+                        <h4 class="text-2xl font-black leading-tight">Développer un ERP Multi-sites complet</h4>
+                        <p class="text-slate-500 text-sm">Apprenez les coulisses de la création de SAASCOM : architecture HFSQL, Mobile et WebDev.</p>
+                        <div class="flex items-center gap-4 text-xs font-bold text-slate-400">
+                            <span class="flex items-center gap-1"><i data-lucide="play-circle" class="w-4 h-4 text-blue-600"></i> 25h de contenu</span>
+                            <span class="flex items-center gap-1"><i data-lucide="list" class="w-4 h-4 text-blue-600"></i> 58 chapitres</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing / Abonnements -->
+            <div id="offres" class="grid lg:grid-cols-3 gap-8">
+                <!-- Plan Mensuel -->
+                <div class="bg-white rounded-[2.5rem] p-10 text-slate-900 border border-slate-200 flex flex-col">
+                    <h5 class="text-xl font-bold mb-2">Abonnement Mensuel</h5>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-black">49€</span>
+                        <span class="text-slate-500">/ mois</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium flex-grow">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-600"></i> Accès à tous les cours</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-600"></i> Vidéos HD en illimité</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-600"></i> Nouvelles vidéos mensuelles</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-600"></i> Sans engagement</li>
+                    </ul>
+                    <a href="#" class="block text-center py-4 border-2 border-slate-900 rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all">S'abonner</a>
+                </div>
+
+                <!-- Plan Annuel -->
+                <div class="bg-blue-600 rounded-[2.5rem] p-10 text-white shadow-2xl shadow-blue-900/40 relative scale-105 flex flex-col">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-blue-600 px-4 py-1 rounded-full text-xs font-black uppercase shadow-lg tracking-widest">Le Meilleur Choix</div>
+                    <h5 class="text-xl font-bold mb-2">Abonnement Annuel</h5>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-black">400€</span>
+                        <span class="text-blue-100">/ an</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium flex-grow">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-white"></i> Économisez 188€ par an</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-white"></i> Accès total illimité</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-white"></i> Support par ticket prioritaire</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-white"></i> Accès forum privé</li>
+                    </ul>
+                    <a href="#" class="block text-center py-4 bg-white text-blue-600 rounded-2xl font-bold hover:bg-slate-100 transition-all shadow-xl">Choisir l'annuel</a>
+                </div>
+
+                <!-- Plan VIP Lifetime -->
+                <div class="bg-slate-900 rounded-[2.5rem] p-10 text-white flex flex-col">
+                    <h5 class="text-xl font-bold mb-2 text-blue-400">Accès VIP Lifetime</h5>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-black">900€</span>
+                        <span class="text-slate-400">/ à vie</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium flex-grow">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-blue-400"></i> Paiement unique définitif</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-blue-400"></i> Tous les cours actuels & futurs</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-blue-400"></i> Mises à jour logicielles prioritaires</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-blue-400"></i> Ligne de support directe</li>
+                    </ul>
+                    <a href="#" class="block text-center py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl">Devenir VIP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6 col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-1.5 rounded-lg text-white"><i data-lucide="code-2" class="w-5 h-5"></i></div>
+                        <span class="text-xl font-bold text-white tracking-tight">WindevExpert</span>
+                    </div>
+                    <p class="max-w-sm">Éditeur de logiciels métiers spécialisés (ALMOHAMI, SAASCOM, YoussiManager) et plateforme de formation en ligne spécialisée en écosystème PC Soft.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6">Nos Solutions</h5>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">ALMOHAMI Juridique</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">SAASCOM Gestion</a></li>
+                        <li><a href="#" class="hover:text-rose-400 transition-colors">YoussiManager Beauté</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6">Formation</h5>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#offres" class="hover:text-blue-400">Formules d'abonnement</a></li>
+                        <li><a href="#formations" class="hover:text-blue-400">Catalogue Vidéos</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Espace Étudiant</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2025 WindevExpert. Tous droits réservés.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+                    <a href="#" class="hover:text-white transition-colors">CGV / Licensing</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) { nav.classList.add('shadow-xl', 'py-1'); } 
+            else { nav.classList.remove('shadow-xl', 'py-1'); }
+        });
+    </script>
+</body>
+</html>

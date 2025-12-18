@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique - SGI</title>
+    <title>Boutique - WindevExpert</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
@@ -11,7 +11,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="font-bold text-xl text-blue-600">SGI Store</span>
+                    <span class="font-bold text-xl text-blue-600">WindevExpert Store</span>
                 </div>
                 <div class="flex items-center space-x-4">
                     @auth

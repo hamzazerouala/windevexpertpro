@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - WindevExpert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; font-style: normal; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .filter-btn.active {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        .star-rating { color: #fbbf24; }
+        * { font-style: normal !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <a href="{{ url('/') }}" class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i data-lucide="code-2" class="text-white w-6 h-6"></i>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight text-blue-900">Windev<span class="text-blue-600">Expert</span></span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- New Home Option -->
+                    <a href="{{ url('/') }}" class="text-slate-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-2">
+                        <i data-lucide="home" class="w-4 h-4"></i> Accueil
+                    </a>
+                    
+                    <a href="{{ route('solutions') }}" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Solutions</a>
+                    <a href="{{ route('courses.index') }}" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Formations</a>
+                    
+                    <!-- Marketplace Active State -->
+                    <a href="{{ route('marketplace.index') }}" class="text-blue-600 font-bold transition-colors">Marketplace</a>
+                    
+                    <div class="h-6 w-px bg-slate-200"></div>
+                    
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-md">
+                            Mon Espace
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Connexion</a>
+                        <a href="{{ route('register') }}" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-md">
+                            Espace Client
+                        </a>
+                    @endauth
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-16 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-6">
+                    Ressources <span class="text-blue-600">Premium</span> pour Développeurs
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed font-medium">
+                    Boostez votre productivité avec nos logiciels métiers, composants WinDev optimisés, codes sources et thèmes WordPress haute performance.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bar de Recherche et Filtres -->
+    <section class="sticky top-20 z-40 bg-slate-50/90 backdrop-blur-md border-b border-slate-200 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-6 justify-between items-center">
+            <div class="flex flex-wrap items-center gap-2">
+                <button class="filter-btn active px-4 py-2 rounded-xl border border-slate-200 font-bold text-xs uppercase tracking-widest transition-all">Tous</button>
+                <button class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 font-bold text-xs uppercase tracking-widest text-slate-600 hover:border-blue-600 hover:text-blue-600 transition-all">Logiciels</button>
+                <button class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 font-bold text-xs uppercase tracking-widest text-slate-600 hover:border-blue-600 hover:text-blue-600 transition-all">Composants</button>
+                <button class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 font-bold text-xs uppercase tracking-widest text-slate-600 hover:border-blue-600 hover:text-blue-600 transition-all">Codes Source</button>
+                <button class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 font-bold text-xs uppercase tracking-widest text-slate-600 hover:border-blue-600 hover:text-blue-600 transition-all">WordPress</button>
+                <button class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 font-bold text-xs uppercase tracking-widest text-slate-600 hover:border-blue-600 hover:text-blue-600 transition-all">UI Kits</button>
+            </div>
+            <div class="relative w-full lg:w-80">
+                <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"></i>
+                <input type="text" placeholder="Rechercher un produit..." class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 outline-none transition-all font-medium">
+            </div>
+        </div>
+    </section>
+
+    <!-- Grille des Produits -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- ALMOHAMI (Logiciel) -->
+            <div class="product-card bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all group flex flex-col">
+                <div class="relative aspect-video overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800" alt="ALMOHAMI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 bg-indigo-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">Logiciel Métier</div>
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">ALMOHAMI Legal Suite</h3>
+                        <div class="flex items-center gap-1 star-rating">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold text-slate-400">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-6 line-clamp-2">Solution complète pour cabinets d'avocats avec IA juridique et réplication cloud sécurisée.</p>
+                    <div class="mt-auto flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-slate-400 uppercase">À partir de</span>
+                            <span class="text-2xl font-black text-slate-900">790€</span>
+                        </div>
+                        <a href="#" class="bg-blue-600 text-white p-3 rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-100">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HFSQL Replicator (Composant) -->
+            <div class="product-card bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all group flex flex-col">
+                <div class="relative aspect-video overflow-hidden bg-slate-900 flex items-center justify-center">
+                    <i data-lucide="refresh-cw" class="text-blue-500 w-20 h-20 opacity-20"></i>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="text-white font-black text-xl uppercase tracking-widest">HFSQL Replicator</span>
+                    </div>
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">Composant WinDev</div>
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">Multi-Sites Sync Pro</h3>
+                        <div class="flex items-center gap-1 star-rating">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold text-slate-400">5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-6 line-clamp-2">Composant prêt à l'emploi pour synchroniser vos bases HFSQL distantes en temps réel avec gestion de conflits.</p>
+                    <div class="mt-auto flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Licence</span>
+                            <span class="text-2xl font-black text-slate-900">249€</span>
+                        </div>
+                        <a href="#" class="bg-slate-900 text-white p-3 rounded-xl hover:bg-blue-600 transition-all shadow-lg">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ERP Boilerplate (Code Source) -->
+            <div class="product-card bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all group flex flex-col">
+                <div class="relative aspect-video overflow-hidden bg-slate-100 p-8">
+                    <div class="h-full border-2 border-dashed border-slate-300 rounded-xl flex items-center justify-center">
+                        <i data-lucide="code" class="text-slate-400 w-12 h-12"></i>
+                    </div>
+                    <div class="absolute top-4 left-4 bg-orange-500 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">Code Source</div>
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">WinDev ERP Core V2</h3>
+                        <div class="flex items-center gap-1 star-rating">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold text-slate-400">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-6 line-clamp-2">Gagnez 3 mois de dev. Structure complète : Auth, Droits, Menus, Dashboard, Import/Export, Logs.</p>
+                    <div class="mt-auto flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Prix</span>
+                            <span class="text-2xl font-black text-slate-900">499€</span>
+                        </div>
+                        <a href="#" class="bg-slate-900 text-white p-3 rounded-xl hover:bg-blue-600 transition-all shadow-lg">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WP Theme (WordPress) -->
+            <div class="product-card bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all group flex flex-col">
+                <div class="relative aspect-video overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800" alt="WP Theme" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 bg-green-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">Thème WordPress</div>
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">ExpertLegal WP Theme</h3>
+                        <div class="flex items-center gap-1 star-rating">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold text-slate-400">4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-6 line-clamp-2">Thème WordPress ultra-rapide optimisé pour les avocats. Intégration API avec ALMOHAMI native.</p>
+                    <div class="mt-auto flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Prix</span>
+                            <span class="text-2xl font-black text-slate-900">89€</span>
+                        </div>
+                        <a href="#" class="bg-slate-900 text-white p-3 rounded-xl hover:bg-blue-600 transition-all shadow-lg">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI Kit (Design) -->
+            <div class="product-card bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all group flex flex-col">
+                <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center p-8">
+                    <div class="grid grid-cols-2 gap-2 w-full max-w-[120px]">
+                        <div class="h-8 bg-white/20 rounded-md"></div>
+                        <div class="h-8 bg-white/40 rounded-md"></div>
+                        <div class="h-8 bg-white/40 rounded-md"></div>
+                        <div class="h-8 bg-white/20 rounded-md"></div>
+                    </div>
+                    <div class="absolute top-4 left-4 bg-rose-500 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">UI Kit WinDev</div>
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">Modern SaaS UI Kit</h3>
+                        <div class="flex items-center gap-1 star-rating">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold text-slate-400">5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-6 line-clamp-2">Bibliothèque de modèles de fenêtres WinDev au design moderne (Shadows, Rounded corners, Flat icons).</p>
+                    <div class="mt-auto flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Prix</span>
+                            <span class="text-2xl font-black text-slate-900">129€</span>
+                        </div>
+                        <a href="#" class="bg-slate-900 text-white p-3 rounded-xl hover:bg-blue-600 transition-all shadow-lg">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WP Plugin (WordPress) -->
+            <div class="product-card bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col">
+                <div class="relative aspect-video overflow-hidden bg-slate-800 flex items-center justify-center">
+                    <i data-lucide="puzzle" class="text-green-500 w-16 h-16 opacity-30"></i>
+                    <div class="absolute top-4 left-4 bg-green-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">Plugin WordPress</div>
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">HFSQL Connector Pro</h3>
+                        <div class="flex items-center gap-1 star-rating">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold text-slate-400">4.5</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-6 line-clamp-2">Affichez vos données WinDev/HFSQL directement sur WordPress via une connexion API sécurisée.</p>
+                    <div class="mt-auto flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Licence</span>
+                            <span class="text-2xl font-black text-slate-900">159€</span>
+                        </div>
+                        <a href="#" class="bg-slate-900 text-white p-3 rounded-xl hover:bg-blue-600 transition-all shadow-lg">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Section Custom Request -->
+    <section class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-blue-600 rounded-[3rem] p-12 md:p-20 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                <div class="space-y-6 lg:w-2/3">
+                    <h2 class="text-4xl md:text-5xl font-black leading-tight">Besoin d'un composant <span class="text-blue-200">sur mesure ?</span></h2>
+                    <p class="text-blue-100 text-lg font-medium">Vous ne trouvez pas ce qu'il vous faut ? Je développe vos composants et plugins personnalisés selon votre cahier des charges.</p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div class="flex items-center gap-2 bg-blue-700/50 px-4 py-2 rounded-full text-sm font-bold border border-blue-400/30">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-blue-200"></i> Qualité garantie
+                        </div>
+                        <div class="flex items-center gap-2 bg-blue-700/50 px-4 py-2 rounded-full text-sm font-bold border border-blue-400/30">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-blue-200"></i> Code documenté
+                        </div>
+                        <div class="flex items-center gap-2 bg-blue-700/50 px-4 py-2 rounded-full text-sm font-bold border border-blue-400/30">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-blue-200"></i> Support inclus
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="bg-white text-blue-600 px-12 py-5 rounded-2xl font-black text-lg hover:bg-slate-100 transition-all shadow-2xl whitespace-nowrap">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2 space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-1.5 rounded-lg text-white"><i data-lucide="code-2" class="w-5 h-5"></i></div>
+                        <span class="text-xl font-bold text-white tracking-tight">WindevExpert</span>
+                    </div>
+                    <p class="max-w-sm font-medium">Marketplace premium dédiée aux développeurs PC Soft et WordPress. Des outils conçus par un expert pour des experts.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Produits</h5>
+                    <ul class="space-y-4 text-sm font-bold">
+                        <li><a href="#" class="hover:text-blue-400">Composants WinDev</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Thèmes WordPress</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Codes Source</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Support</h5>
+                    <ul class="space-y-4 text-sm font-bold">
+                        <li><a href="#" class="hover:text-blue-400">Documentation</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Licences</a></li>
+                        <li><a href="{{ route('dashboard') }}" class="hover:text-blue-400">Dashboard Client</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 text-center text-xs font-bold uppercase tracking-widest">
+                <p>&copy; 2025 WindevExpert. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) { nav.classList.add('shadow-xl'); } 
+            else { nav.classList.remove('shadow-xl'); }
+        });
+
+        // Simple filter logic for visual feedback
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-blue-600', 'text-white');
+                    b.classList.add('bg-white', 'text-slate-600');
+                });
+                this.classList.add('active', 'bg-blue-600', 'text-white');
+                this.classList.remove('bg-white', 'text-slate-600');
+            });
+        });
+    </script>
+</body>
+</html>

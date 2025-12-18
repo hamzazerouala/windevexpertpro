@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Logiciels & Services - WindevExpert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; font-style: normal; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at bottom left, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { font-style: normal !important; } /* Sécurité anti-italique */
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i data-lucide="code-2" class="text-white w-6 h-6"></i>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight text-blue-900">Windev<span class="text-blue-600">Expert</span></span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="software.html" class="text-blue-600 font-bold transition-colors">Nos Logiciels</a>
+                    <a href="catalog.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Formations</a>
+                    <a href="index.html#offres" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Abonnements</a>
+                    <div class="h-6 w-px bg-slate-200"></div>
+                    <a href="auth.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Connexion</a>
+                    <a href="auth.html" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-md">
+                        Espace Client
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto space-y-8">
+                <div class="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-bold border border-blue-200">
+                    <span>Expertise de pointe en développement métier</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black text-slate-900 leading-tight">
+                    Des solutions logicielles <span class="text-blue-600">sans limites.</span>
+                </h1>
+                <p class="text-xl text-slate-600 leading-relaxed">
+                    Nous transformons vos défis complexes en outils fluides et performants. De l'application Desktop haute disponibilité au SaaS Cloud, nous maîtrisons chaque ligne de code.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <a href="#pcsoft" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl">
+                        Ecosystème PC Soft
+                    </a>
+                    <a href="#custom" class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all">
+                        Développement Sur Mesure
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Ecosystème PC Soft -->
+    <section id="pcsoft" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-blue-600 font-bold tracking-widest uppercase text-sm">Maîtrise Technologique</h2>
+                <p class="text-4xl font-black text-slate-900">Expertise PC Soft Certifiée</p>
+                <p class="text-slate-500 max-w-2xl mx-auto font-medium">Nous exploitons toute la puissance du WLangage pour créer des synergies parfaites entre vos différentes plateformes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- WinDev Card -->
+                <div class="service-card bg-slate-50 border border-slate-200 rounded-[2.5rem] p-10 flex flex-col group">
+                    <div class="bg-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-blue-200">
+                        <i data-lucide="monitor" class="text-white w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">WinDev</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6 font-medium">Développement d'applications de gestion (ERP, CRM) haute performance pour Windows. Architecture Client/Serveur et HFSQL robuste.</p>
+                    <ul class="space-y-3 mb-8 text-sm font-bold text-slate-500 flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4"></i> Logiciels de bureau ultra-rapides</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4"></i> Gestion de bases de données volumineuses</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4"></i> Intégration matérielle (TPE, Scanners)</li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-200 text-blue-600 font-black text-xs uppercase tracking-widest">Exemple : SAASCOM Desktop</div>
+                </div>
+
+                <!-- WebDev Card -->
+                <div class="service-card bg-slate-50 border border-slate-200 rounded-[2.5rem] p-10 flex flex-col group">
+                    <div class="bg-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-green-200">
+                        <i data-lucide="globe" class="text-white w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tight">WebDev</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6 font-medium">Déploiement de portails Web dynamiques, extranets sécurisés et sites institutionnels à forte valeur ajoutée.</p>
+                    <ul class="space-y-3 mb-8 text-sm font-bold text-slate-500 flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> Sites Web interactifs & temps réel</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> Portails d'accès clients sécurisés</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> Architecture Web performante</li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-200 text-green-600 font-black text-xs uppercase tracking-widest">Exemple : ALMOHAMI Web</div>
+                </div>
+
+                <!-- WinDev Mobile Card -->
+                <div class="service-card bg-slate-50 border border-slate-200 rounded-[2.5rem] p-10 flex flex-col group">
+                    <div class="bg-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-orange-200">
+                        <i data-lucide="smartphone" class="text-white w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 uppercase tracking-tight">WinDev Mobile</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6 font-medium">Création d'applications natives iOS et Android fluides avec synchronisation automatique des données.</p>
+                    <ul class="space-y-3 mb-8 text-sm font-bold text-slate-500 flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-orange-600 w-4 h-4"></i> Applications iOS & Android natives</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-orange-600 w-4 h-4"></i> Mode déconnecté avec réplication</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-orange-600 w-4 h-4"></i> Notifications Push & Géolocalisation</li>
+                    </ul>
+                    <div class="pt-6 border-t border-slate-200 text-orange-600 font-black text-xs uppercase tracking-widest">Exemple : App Mobile SAASCOM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section SaaS Personnalisé -->
+    <section id="custom" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-blue-400 font-black tracking-widest uppercase text-sm">Architecture Cloud</h2>
+                    <p class="text-4xl md:text-5xl font-black leading-tight">Solutions SaaS <span class="text-blue-500">sur mesure</span></p>
+                    <p class="text-slate-400 text-lg leading-relaxed">Nous concevons votre logiciel en mode abonnement (SaaS). Une architecture scalable, sécurisée et accessible de n'importe où dans le monde.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-blue-600/20 p-3 rounded-xl border border-blue-500/30 text-blue-400"><i data-lucide="layers"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold">Multi-tenant</h4>
+                                <p class="text-slate-500 text-sm">Gestion isolée et sécurisée de chaque client sur une infrastructure unique.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-blue-600/20 p-3 rounded-xl border border-blue-500/30 text-blue-400"><i data-lucide="credit-card"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold">Billing Intégré</h4>
+                                <p class="text-slate-500 text-sm">Automatisation complète des paiements récurrents et des factures via Stripe.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-blue-600/20 p-3 rounded-xl border border-blue-500/30 text-blue-400"><i data-lucide="shield"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold">Sécurité Maximale</h4>
+                                <p class="text-slate-500 text-sm">Cryptage des données et conformité RGPD assurée dès la conception.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-[3rem] p-10 border border-white/10 shadow-2xl relative">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 blur-[80px] rounded-full"></div>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">Structure de votre SaaS</h3>
+                    <div class="space-y-4">
+                        <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5 flex items-center justify-between">
+                            <span class="font-bold">Portail Client (Web)</span>
+                            <span class="text-[10px] bg-blue-600 px-2 py-1 rounded-full font-black uppercase">Frontend</span>
+                        </div>
+                        <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5 flex items-center justify-between">
+                            <span class="font-bold">Moteur de Calcul (API)</span>
+                            <span class="text-[10px] bg-indigo-600 px-2 py-1 rounded-full font-black uppercase">Backend</span>
+                        </div>
+                        <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/5 flex items-center justify-between">
+                            <span class="font-bold">Base de Données (Cloud)</span>
+                            <span class="text-[10px] bg-orange-600 px-2 py-1 rounded-full font-black uppercase">Database</span>
+                        </div>
+                    </div>
+                    <div class="mt-10 text-center">
+                        <p class="text-sm text-slate-500 font-bold mb-6">Prêt à lancer votre propre logiciel ?</p>
+                        <a href="#" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-2xl font-black hover:bg-blue-700 transition-all">Lancer mon projet SaaS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section WordPress Custom -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <div class="relative bg-slate-100 p-4 rounded-[2.5rem] shadow-inner overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200" alt="WordPress Custom" class="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-blue-600/10 rounded-2xl"></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 space-y-8 order-1 lg:order-2">
+                    <div class="bg-slate-900 text-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
+                        <i data-lucide="framer" class="w-8 h-8"></i>
+                    </div>
+                    <h2 class="text-4xl font-black text-slate-900 leading-tight">WordPress <span class="text-blue-600">Haute Couture</span></h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">Oubliez les thèmes tout faits et les plugins lourds. Nous développons des thèmes et des plugins WordPress 100% personnalisés, optimisés pour la vitesse et le SEO.</p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-black mb-2 flex items-center gap-2">
+                                <i data-lucide="palette" class="text-blue-600 w-5 h-5"></i> Thèmes Uniques
+                            </h4>
+                            <p class="text-sm text-slate-500 font-medium leading-relaxed">Un design qui vous ressemble, sans superflu, pour une expérience utilisateur irréprochable sur mobile et desktop.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-black mb-2 flex items-center gap-2">
+                                <i data-lucide="puzzle" class="text-blue-600 w-5 h-5"></i> Plugins Sur Mesure
+                            </h4>
+                            <p class="text-sm text-slate-500 font-medium leading-relaxed">Besoin d'une fonctionnalité métier spécifique ? Nous codons vos propres plugins PHP sans polluer votre base de données.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bg-blue-600 py-24">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-10">
+            <h2 class="text-4xl md:text-6xl font-black text-white leading-tight">Vous avez une idée ? <br> Nous avons le code.</h2>
+            <p class="text-blue-100 text-xl font-medium">Discutons de votre projet de développement dès aujourd'hui et construisons ensemble votre futur outil numérique.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 pt-4">
+                <a href="#" class="bg-slate-900 text-white px-12 py-5 rounded-2xl font-black text-lg hover:bg-slate-800 transition-all shadow-2xl">Démarrer un devis</a>
+                <a href="auth.html" class="bg-white text-blue-600 px-12 py-5 rounded-2xl font-black text-lg hover:bg-slate-50 transition-all">Consulter mon dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-20 border-t border-white/5 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2 space-y-6">
+                    <div class="flex justify-center md:justify-start items-center space-x-2">
+                        <div class="bg-blue-600 p-1.5 rounded-lg text-white"><i data-lucide="code-2" class="w-5 h-5"></i></div>
+                        <span class="text-xl font-bold text-white tracking-tight">WindevExpert</span>
+                    </div>
+                    <p class="max-w-sm mx-auto md:mx-0 font-medium">Experts en développement PC Soft, SaaS et WordPress. Votre partenaire pour des solutions logicielles professionnelles et évolutives.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Services</h5>
+                    <ul class="space-y-4 text-sm font-bold">
+                        <li><a href="#" class="hover:text-blue-400">WinDev / WebDev / Mobile</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Solutions SaaS</a></li>
+                        <li><a href="#" class="hover:text-blue-400">WordPress Custom</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Accès Rapide</h5>
+                    <ul class="space-y-4 text-sm font-bold">
+                        <li><a href="catalog.html" class="hover:text-blue-400">Catalogue Formations</a></li>
+                        <li><a href="index.html#offres" class="hover:text-blue-400">Tarifs Abonnements</a></li>
+                        <li><a href="auth.html" class="hover:text-blue-400">Dashboard Client</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 text-center text-xs font-bold uppercase tracking-widest">
+                <p>&copy; 2025 WindevExpert. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) { nav.classList.add('shadow-xl'); } 
+            else { nav.classList.remove('shadow-xl'); }
+        });
+    </script>
+</body>
+</html>
