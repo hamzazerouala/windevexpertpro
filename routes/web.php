@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+// Admin Auth Routes
+Route::get('admin/login', [AdminAuthController::class, 'loginForm'])->name('admin.login');
+Route::post('admin/login', [AdminAuthController::class, 'login']);
+
+// Admin Protected Routes
+Route::middleware(['is_super_admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
 });
