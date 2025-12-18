@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,14 @@ use App\Http\Controllers\AdminAuthController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Store Routes
+Route::get('/store', [StoreController::class, 'index'])->name('store.index');
+Route::get('/store/checkout/{priceId}', [StoreController::class, 'checkout'])->name('store.checkout');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 // Admin Auth Routes
 Route::get('admin/login', [AdminAuthController::class, 'loginForm'])->name('admin.login');

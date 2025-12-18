@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Licensing Routes
+Route::post('/license/activate', [App\Http\Controllers\Api\LicenseController::class, 'activate']);
+Route::post('/license/check', [App\Http\Controllers\Api\LicenseController::class, 'check']);
